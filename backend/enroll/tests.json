@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Submit enrollment successfully",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иван Петров",
+        "phone": "+7 999 123-45-67",
+        "email": "ivan@example.com",
+        "direction": "Лезгинка",
+        "age": 25,
+        "experience_level": "Начинающий",
+        "message": "Хочу научиться танцевать лезгинку"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get recent enrollments",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
